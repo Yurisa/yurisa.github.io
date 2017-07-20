@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[Vue.js填了个坑]]></title>
       <url>/2017/07/19/vue/</url>
-      <content type="html"><![CDATA[<h2 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h2><p>最近在做一个项目，项目要求是前端要用Vue.js后台用node.js。<br>下面分享一下现在我对于Vue.js的理解以及在写代码过程中所遇到的坑。</p>
+      <content type="html"><![CDATA[<h2 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h2><p>最近在做一个项目，项目要求是前端要用Vue.js后台用node.js。<br>下面分享一下现在我对于Vue.js的理解以及在写代码过程中所遇到的坑。<br><a id="more"></a></p>
 <h3 id="Vue-js简单介绍"><a href="#Vue-js简单介绍" class="headerlink" title="Vue.js简单介绍"></a>Vue.js简单介绍</h3><blockquote>
 <p>摘自Vue.js官网</p>
 </blockquote>
