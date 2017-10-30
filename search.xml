@@ -14,7 +14,7 @@
 <p>3.隔离</p>
 <h2 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h2><p>通过联合文件系统达到文件分层的效果,与git同理</p>
 <h2 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h2><p>Docker容器的本质是一个进程。Docker镜像的每一层都是只读的，而容器作为最上层，是可读可写的。如果程序需要对镜像进行修改，那么Docker会把要修改的镜像文件拷贝到最上层的容器中，然后再进行修改。往后对该文件的访问会优先从容器中读取。</p>
-<h2 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h2><p>1.<a href="hub.docker.com">hub.docker.com</a>自己提供的，速度很慢<br>2.国内自己提供的，如网易蜂巢<a href="c.163.com">c.163.com</a></p>
+<h2 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h2><p>1.<a href="https://hub.docker.com" target="_blank" rel="external">hub.docker.com</a>自己提供的，速度很慢<br>2.国内自己提供的，如网易蜂巢<a href="https://c.163.com" target="_blank" rel="external">c.163.com</a></p>
 ]]></content>
       
         <categories>
