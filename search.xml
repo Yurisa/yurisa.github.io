@@ -27,7 +27,26 @@
 <p>  限制广播地址。对本机来说，这个地址指本网段内(同一广播域)的所有主机。如果翻译成人类的语言，应该是这样：“这个房间里的所有人都注意了！”这个地址不能被路由器转发。</p>
 <p>三、127.0.0.1</p>
 <p>  本机地址，主要用于测试。用汉语表示，就是“我自己”。在Windows系统中，这个地址有一个别名“Localhost”。寻址这样一个地址，是不能把它发到网络接口的。除非出错，否则在传输介质上永远不应该出现目的地址为“127.0.0.1”的数据包。</p>
-<h2 id="关于ip的常用命令行"><a href="#关于ip的常用命令行" class="headerlink" title="关于ip的常用命令行"></a>关于ip的常用命令行</h2><p>1.·arp -a或arp -g<br>　　用于查看高速缓存中的所有项目。-a和-g参数的结果是一样的，多年来-g一直是UNIX平台上用来显示ARP高速缓存中所有项目的选项，而Windows用的是arp -a（-a可被视为all，即全部的意思），但它也可以接受比较传统的-g选项。<br>  <img src="/images/arp.png" alt="arp icon"><br>2.netstat -an<br>  netstat命令的功能是显示网络连接、路由表和网络接口信息，可以让用户得知目前都有哪些网络连接正在运作。<br>   -a: 查看所有连接和监听端口<br>   -n: 显示IP地址和端口号，而不显示域名和服务器<br>  <img src="/images/netstat.png" alt="netstat icon"><br>3.ping<br>  ping命令用于：确定网络和各外部主机的状态；跟踪和隔离硬件和软件问题；测试、评估和管理网络。如果主机正在运行并连在网上，它就对回送信号进行响应。每个回送信号请求包含一个网际协议（IP）和 ICMP 头，后面紧跟一个 tim 结构，以及来填写这个信息包的足够的字节。缺省情况是连续发送回送信号请求直到接收到中断信号（Ctrl-C）。<br>  ping 命令每秒发送一个数据报并且为每个接收到的响应打印一行输出。ping 命令计算信号往返时间和(信息)包丢失情况的统计信息，并且在完成之后显示一个简要总结。ping 命令在程序超时或当接收到 SIGINT 信号时结束。Host 参数或者是一个有效的主机名或者是因特网地址。<br><img src="/images/ping.png" alt="ping icon"></p>
+<h2 id="关于ip的常用命令行"><a href="#关于ip的常用命令行" class="headerlink" title="关于ip的常用命令行"></a>关于ip的常用命令行</h2><p>1.·arp -a或arp -g<br>　　用于查看高速缓存中的所有项目。-a和-g参数的结果是一样的，多年来-g一直是UNIX平台上用来显示ARP高速缓存中所有项目的选项，而Windows用的是arp -a（-a可被视为all，即全部的意思），但它也可以接受比较传统的-g选项。<br>  <img src="/images/arp.png" alt="arp icon"><br>2.netstat<br>  netstat命令的功能是显示网络连接、路由表和网络接口信息，可以让用户得知目前都有哪些网络连接正在运作。<br>  选项：<br>   -t:列出TCP协议端口<br>   -u:列出UDP协议端口<br>   -l:仅列出在监听状态网络服务<br>   -a: 查看所有连接和监听端口<br>   -n: 显示IP地址和端口号，而不显示域名和服务器<br>  <img src="/images/netstat.png" alt="netstat icon"></p>
+<p>3.route<br>route -n</p>
+<p>#查看路由列表(可以看到网关)</p>
+<p>route add default gw [IP]</p>
+<p>#临时设定网关</p>
+<p>4.<br>ifdown 网卡设备名</p>
+<p>#禁用该网卡设备</p>
+<p>ifup 网卡设备名</p>
+<p>#启用该网卡设备</p>
+<p>5.nslookup<br>nslookup [域名]</p>
+<p>#翻译域名对应哪个IP</p>
+<p>3.ping<br>  ping命令用于：确定网络和各外部主机的状态；跟踪和隔离硬件和软件问题；测试、评估和管理网络。如果主机正在运行并连在网上，它就对回送信号进行响应。每个回送信号请求包含一个网际协议（IP）和 ICMP 头，后面紧跟一个 tim 结构，以及来填写这个信息包的足够的字节。缺省情况是连续发送回送信号请求直到接收到中断信号（Ctrl-C）。<br>  ping 命令每秒发送一个数据报并且为每个接收到的响应打印一行输出。ping 命令计算信号往返时间和(信息)包丢失情况的统计信息，并且在完成之后显示一个简要总结。ping 命令在程序超时或当接收到 SIGINT 信号时结束。Host 参数或者是一个有效的主机名或者是因特网地址。<br>  ping [选项] ip或域名<br>  选项：<br>     -c 次数：指定ping包的次数</p>
+<p><img src="/images/ping.png" alt="ping icon"></p>
+<p>4.tcpdump 抓包命令<br>tcpdump -i eth0 -nnX port 21<br>选项：<br>     -i 指定网卡接口；<br>     -nn 将数据包中的域名与服务转为IP和端口；<br>     -X 以十六进制和ASCII码显示数据包内容；<br>     port 指定监听的端口</p>
+<p>5.telnet<br>telnet [域名或IP] [端口]</p>
+<p>#远程管理与端口探测命令</p>
+<p>6.traceroute<br>traceroute [选项] IP或域名</p>
+<p>#路由跟踪命令<br>选项：<br>   -n 使用IP，不使用域名，速度更快</p>
+<p>7.wget </p>
+<p>#下载命令</p>
 ]]></content>
       
         <categories>
