@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[docker]]></title>
       <url>/2017/10/30/docker/</url>
-      <content type="html"><![CDATA[<p><img src="" alt="docker icon"></p>
+      <content type="html"><![CDATA[<p><img src="/images/docker.jpg" alt="docker icon"></p>
 <h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><p>1.Docker is the world’s leading software containerization platform.</p>
 <p>2.Docker公司开发,开源,托管在github.</p>
 <p>3.跨平台,支持windows、MacOS、Linux.</p>
