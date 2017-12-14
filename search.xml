@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[负载均衡]]></title>
       <url>/2017/12/14/balanceload/</url>
-      <content type="html"><![CDATA[<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><h3 id="1-安装apache，"><a href="#1-安装apache，" class="headerlink" title="1.安装apache，"></a>1.安装apache，</h3><p>  进入apache的conf目录，打开apache的配置文件httpd.conf，写下apache的路径<br>  <img src="/images/balance/1.png" alt="1 icon"><br>  运行apache，命令行httpd –k start 出现apache首页即为配置成功</p>
+      <content type="html"><![CDATA[<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><h3 id="1-安装apache，"><a href="#1-安装apache，" class="headerlink" title="1.安装apache，"></a>1.安装apache，</h3><p>  进入apache的conf目录，打开apache的配置文件httpd.conf，写下apache的路径<br>  <img src="/images/balance/1.png" alt="1 icon"><br>  运行apache，命令行httpd –k start 出现apache首页即为配置成功<br><a id="more"></a></p>
 <h3 id="2-配置tomcat"><a href="#2-配置tomcat" class="headerlink" title="2.配置tomcat"></a>2.配置tomcat</h3><pre><code>下载两个tomcat，分别在环境变量中配置CATALINA_HOME以及CATALINA_HOME2、CATALINA_BASE和CATALINA_BASE2（一个tomcat对应一个CATALINA_HOME）并修改第2个tomcat bin中的批处理文件starup.bat和catalina.bat，将里面的CATALINA_HOME和CATALINA_BASE全部替换为CATALINA_HOME2和CATALINA_BASE2。
 启动tomcat，看见tomcat首页即为配置成功。
 </code></pre><h3 id="3-继续修改apache中httpd-conf文件"><a href="#3-继续修改apache中httpd-conf文件" class="headerlink" title="3.继续修改apache中httpd.conf文件"></a>3.继续修改apache中httpd.conf文件</h3><p> <img src="/images/balance/2.jpg" alt="2 icon"><br> <img src="/images/balance/3.jpg" alt="3 icon"><br> <img src="/images/balance/4.jpg" alt="4 icon"><br> <img src="/images/balance/5.jpg" alt="5 icon"><br> <img src="/images/balance/6.jpg" alt="6 icon"><br> 取消注释<br>并在文件末尾加上<br> <img src="/images/balance/7.png" alt="7 icon"></p>
