@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -93,12 +93,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yellow2dong">
-<meta property="og:url" content="http://yoursite.com/tags/mvvm/index.html">
+<meta name="description" content="1.事件绑定、捕获与冒泡1.1 addEventListen()方法用于向指定元素添加事件句柄示例:element.addEventListener(event, function, useCapture)，其中的event 必须。字符串，指定事件名。 不要使用 “on” 前缀。 例如，使用 “click” ,而不是使用 “onclick”。function  必须。指定要事件触发时执行的函数us">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件绑定、捕获与冒泡以及事件执行顺序">
+<meta property="og:url" content="http://yoursite.com/2018/01/25/captureAndBubble/index.html">
 <meta property="og:site_name" content="Yellow2dong">
+<meta property="og:description" content="1.事件绑定、捕获与冒泡1.1 addEventListen()方法用于向指定元素添加事件句柄示例:element.addEventListener(event, function, useCapture)，其中的event 必须。字符串，指定事件名。 不要使用 “on” 前缀。 例如，使用 “click” ,而不是使用 “onclick”。function  必须。指定要事件触发时执行的函数us">
+<meta property="og:updated_time" content="2018-01-26T06:50:50.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yellow2dong">
+<meta name="twitter:title" content="事件绑定、捕获与冒泡以及事件执行顺序">
+<meta name="twitter:description" content="1.事件绑定、捕获与冒泡1.1 addEventListen()方法用于向指定元素添加事件句柄示例:element.addEventListener(event, function, useCapture)，其中的event 必须。字符串，指定事件名。 不要使用 “on” 前缀。 例如，使用 “click” ,而不是使用 “onclick”。function  必须。指定要事件触发时执行的函数us">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/mvvm/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/25/captureAndBubble/"/>
 
 
 
 
 
-  <title>标签: mvvm | Yellow2dong</title>
+  <title>事件绑定、捕获与冒泡以及事件执行顺序 | Yellow2dong</title>
   
 
 
@@ -157,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,44 +290,176 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>mvvm<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/captureAndBubble/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yurisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yellow2dong">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">事件绑定、捕获与冒泡以及事件执行顺序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T21:49:10+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="1-事件绑定、捕获与冒泡"><a href="#1-事件绑定、捕获与冒泡" class="headerlink" title="1.事件绑定、捕获与冒泡"></a>1.事件绑定、捕获与冒泡</h3><h4 id="1-1-addEventListen-方法用于向指定元素添加事件句柄"><a href="#1-1-addEventListen-方法用于向指定元素添加事件句柄" class="headerlink" title="1.1 addEventListen()方法用于向指定元素添加事件句柄"></a>1.1 addEventListen()方法用于向指定元素添加事件句柄</h4><p>示例:element.addEventListener(event, function, useCapture)，<br>其中的event 必须。字符串，指定事件名。 不要使用 “on” 前缀。 例如，使用 “click” ,而不是使用 “onclick”。<br>function  必须。指定要事件触发时执行的函数<br>useCapture  可选。布尔值，指定事件是否在捕获或冒泡阶段执行。默认为false,即为冒泡。<br><a id="more"></a><br>如果给同一事件绑定多个处理函数，先绑定的先执行。<br>a) 事件处理函数中的this代表的是dom对象，不是window,这个特性与attach不同。<br>b)同一个事件处理函数可以绑定2次，一次用于事件捕获一次用于事件冒泡。但是如果绑定的是同一个事件处理函数，并且都是事件冒泡类型或者事件捕获类型，那么只能绑定一次。<br>c)不同的事件处理函数可以重复绑定，这个特性与attachEvent一致。</p>
+<h4 id="1-2-事件处理函数的执行顺序"><a href="#1-2-事件处理函数的执行顺序" class="headerlink" title="1.2 事件处理函数的执行顺序"></a>1.2 事件处理函数的执行顺序</h4><p>addEventListener与attachEvent表现一致，如果给同一事件绑定多个处理函数，先绑定的先执行。注意:给同一个dom对象的同一事件绑定多个事件的处理函数此时不涉及事件的冒泡和捕捉的问题所以addEventListener的第三个参数在这种场景下没有什么用。</p>
+<h4 id="1-3-捕获与冒泡"><a href="#1-3-捕获与冒泡" class="headerlink" title="1.3 捕获与冒泡"></a>1.3 捕获与冒泡</h4><p>useCapture=false意味着：将事件处理函数加入到冒泡阶段，在冒泡阶段会被调用；useCapture=true意味着：将事件处理函数加入到捕获阶段，在捕获阶段会被调用。从DOM事件流模型可以看出，捕获阶段的事件处理函数，一定比冒泡阶段的事件处理函数先执行。</p>
+<h5 id="事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。"><a href="#事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。" class="headerlink" title="事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。"></a>事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。</h5><h4 id="1-4-阻止事件冒泡和捕获"><a href="#1-4-阻止事件冒泡和捕获" class="headerlink" title="1.4 阻止事件冒泡和捕获"></a>1.4 阻止事件冒泡和捕获</h4><h5 id="停止传播："><a href="#停止传播：" class="headerlink" title="停止传播："></a>停止传播：</h5><p>事件对象有一个方法可以阻止事件的传播 event.stopPropagation();  </p>
+<h5 id="阻止事件的默认行为："><a href="#阻止事件的默认行为：" class="headerlink" title="阻止事件的默认行为："></a>阻止事件的默认行为：</h5><p>如阻止一个链接的点击效果，阻止表单的提交效果 event.preventDefault();</p>
+<h3 id="2-IE下不兼容行为"><a href="#2-IE下不兼容行为" class="headerlink" title="2.IE下不兼容行为"></a>2.IE下不兼容行为</h3><p>针对IE模型的事件写法<br>适用于IE6、7、8</p>
+<h5 id="IE的事件模型相比W3C的标准事件，主要有以下几点不同："><a href="#IE的事件模型相比W3C的标准事件，主要有以下几点不同：" class="headerlink" title="IE的事件模型相比W3C的标准事件，主要有以下几点不同："></a>IE的事件模型相比W3C的标准事件，主要有以下几点不同：</h5><p>1.绑定事件的函数不一样,IE中用attachEvent,detachEvent<br>2.事件必须要用on,比如标准的第一个参数为click,相对的IE中要写onclick<br>3.IE6模型中，不支持捕获模型，只支持冒泡(靠JS弥补不了)。IE7、8已经支持捕获<br>4.IE7、8中还有个毛病，就是先绑定的事件后发生(准确的说,有可能随机发生)。<br>5.绑定的事件中,this指向问题 W3C模型中,this指向dom对象本身，而IE模型中this指向window。</p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/07/19/vue/" itemprop="url">
-              
-                <span itemprop="name">Vue.js填了个坑</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-19T14:50:51+08:00"
-              content="2017-07-19" >
-          07-19
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/14/balanceload/" rel="next" title="负载均衡">
+                <i class="fa fa-chevron-left"></i> 负载均衡
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +467,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -350,8 +491,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -413,6 +563,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-事件绑定、捕获与冒泡"><span class="nav-number">1.</span> <span class="nav-text">1.事件绑定、捕获与冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-addEventListen-方法用于向指定元素添加事件句柄"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 addEventListen()方法用于向指定元素添加事件句柄</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-事件处理函数的执行顺序"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 事件处理函数的执行顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-捕获与冒泡"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 捕获与冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。"><span class="nav-number">1.3.1.</span> <span class="nav-text">事件函数执行顺序结论：捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-阻止事件冒泡和捕获"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 阻止事件冒泡和捕获</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#停止传播："><span class="nav-number">1.4.1.</span> <span class="nav-text">停止传播：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#阻止事件的默认行为："><span class="nav-number">1.4.2.</span> <span class="nav-text">阻止事件的默认行为：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-IE下不兼容行为"><span class="nav-number">2.</span> <span class="nav-text">2.IE下不兼容行为</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#IE的事件模型相比W3C的标准事件，主要有以下几点不同："><span class="nav-number">2.0.1.</span> <span class="nav-text">IE的事件模型相比W3C的标准事件，主要有以下几点不同：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -526,10 +692,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
