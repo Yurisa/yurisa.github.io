@@ -41,13 +41,8 @@
 <p>虽然arguments对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同</p>
 <p>例如：</p>
 <p>arguments[0],arguments[1],。。。。。。。。arguments[n],</p>
-<p>示例:<br>function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)</p>
-<p>输出结果：</p>
-<p>name,age</p>
-<h6 id="callee属性，返回正被执行的-Function-对象，"><a href="#callee属性，返回正被执行的-Function-对象，" class="headerlink" title="callee属性，返回正被执行的 Function 对象，"></a>callee属性，返回正被执行的 Function 对象，</h6><p>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。</p>
-<p>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。</p>
 <p>示例:</p>
-<p>var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));</p>
+<font color="#FF7F50">function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)<br><br>输出结果：<br><br>name,age<br></font><br>###### callee属性，返回正被执行的 Function 对象<br>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。<br><br>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。<br><br>示例:<br><br><font color="#FF7F50">var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));<br></font>
 ]]></content>
       
         <categories>
