@@ -4,8 +4,51 @@
     
     <entry>
       <title><![CDATA[js高级编程]]></title>
+      <url>/2018/01/26/jsNullAndUndefined/</url>
+      <content type="html"><![CDATA[<h4 id="js中-null-和-undefined-的区别"><a href="#js中-null-和-undefined-的区别" class="headerlink" title="js中 null 和 undefined 的区别"></a>js中 null 和 undefined 的区别</h4><p>Undefined类型只有一个值，即undefined。当声明的变量(已被声明)还未被初始化时，变量的默认值为undefined。<br>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。<br> js 代码</p>
+<h6 id="var-oValue"><a href="#var-oValue" class="headerlink" title="var oValue;"></a>var oValue;</h6><h6 id="alert-oValue-undefined-output-“true”"><a href="#alert-oValue-undefined-output-“true”" class="headerlink" title="alert(oValue == undefined); //output “true”"></a>alert(oValue == undefined); //output “true”</h6><p>这段代码显示为true,代表oVlaue的值即为undefined，因为我们没有初始化它。<br><a id="more"></a><br>示例代码</p>
+<h6 id="alert-null-document-getElementById-‘notExistElement’"><a href="#alert-null-document-getElementById-‘notExistElement’" class="headerlink" title="alert(null == document.getElementById(‘notExistElement’));"></a>alert(null == document.getElementById(‘notExistElement’));</h6><p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p>
+<p>示例代码</p>
+<h6 id="alert-typeof-undefined-output-“undefined”"><a href="#alert-typeof-undefined-output-“undefined”" class="headerlink" title="alert(typeof undefined); //output “undefined”"></a>alert(typeof undefined); //output “undefined”</h6><h6 id="alert-typeof-null-output-“object”"><a href="#alert-typeof-null-output-“object”" class="headerlink" title="alert(typeof null); //output “object”"></a>alert(typeof null); //output “object”</h6><p>第一行代码很容易理解，undefined的类型为Undefined；第二行代码却让人疑惑，为什么null的类型又是Object了呢？其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p>
+<p>示例代码</p>
+<h6 id="alert-null-undefined-output-“true”"><a href="#alert-null-undefined-output-“true”" class="headerlink" title="alert(null == undefined); //output “true”"></a>alert(null == undefined); //output “true”</h6><p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为相等的。但是，如果在一些情况下，我们一定要区分这两个值，那应该怎么办呢？可以使用下面的两种方法。</p>
+<p>示例代码</p>
+<h6 id="alert-null-undefined-output-“false”"><a href="#alert-null-undefined-output-“false”" class="headerlink" title="alert(null === undefined); //output “false”"></a>alert(null === undefined); //output “false”</h6><h6 id="alert-typeof-null-typeof-undefined-output-“false”"><a href="#alert-typeof-null-typeof-undefined-output-“false”" class="headerlink" title="alert(typeof null == typeof undefined); //output “false”"></a>alert(typeof null == typeof undefined); //output “false”</h6><p>使用typeof方法在前面已经讲过，null与undefined的类型是不一样的，所以输出”false”。而===代表绝对等于，在这里null === undefined输出false。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 编程语言 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[js高级编程]]></title>
       <url>/2018/01/26/javascriptSenior/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>javascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.callee)。<br><a id="more"></a></p>
+<h6 id="arguments他的特性和使用方法"><a href="#arguments他的特性和使用方法" class="headerlink" title="arguments他的特性和使用方法"></a>arguments他的特性和使用方法</h6><p>特性：</p>
+<p>arguments对象和Function是分不开的。因为arguments这个对象不能显式创建，arguments对象只有函数开始时才可用。</p>
+<p>使用方法：</p>
+<p>虽然arguments对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同</p>
+<p>例如：</p>
+<p>arguments[0],arguments[1],。。。。。。。。arguments[n],</p>
+<p>示例:<br>function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)</p>
+<p>输出结果：</p>
+<p>name,age</p>
+<h6 id="callee属性，返回正被执行的-Function-对象，"><a href="#callee属性，返回正被执行的-Function-对象，" class="headerlink" title="callee属性，返回正被执行的 Function 对象，"></a>callee属性，返回正被执行的 Function 对象，</h6><p>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。</p>
+<p>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。</p>
+<p>示例:</p>
+<p>var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));</p>
+]]></content>
       
         <categories>
             

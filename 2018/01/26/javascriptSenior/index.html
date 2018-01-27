@@ -93,14 +93,17 @@
 
 
 
+<meta name="description" content="argumentsjavascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.call">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级编程">
 <meta property="og:url" content="http://yoursite.com/2018/01/26/javascriptSenior/index.html">
 <meta property="og:site_name" content="Yellow2dong">
-<meta property="og:updated_time" content="2018-01-26T06:55:56.689Z">
+<meta property="og:description" content="argumentsjavascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.call">
+<meta property="og:updated_time" content="2018-01-27T05:22:36.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js高级编程">
+<meta name="twitter:description" content="argumentsjavascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.call">
 
 
 
@@ -383,7 +386,21 @@
       
 
       
-        
+        <h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>javascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.callee)。<br><a id="more"></a></p>
+<h6 id="arguments他的特性和使用方法"><a href="#arguments他的特性和使用方法" class="headerlink" title="arguments他的特性和使用方法"></a>arguments他的特性和使用方法</h6><p>特性：</p>
+<p>arguments对象和Function是分不开的。因为arguments这个对象不能显式创建，arguments对象只有函数开始时才可用。</p>
+<p>使用方法：</p>
+<p>虽然arguments对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同</p>
+<p>例如：</p>
+<p>arguments[0],arguments[1],。。。。。。。。arguments[n],</p>
+<p>示例:<br>function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)</p>
+<p>输出结果：</p>
+<p>name,age</p>
+<h6 id="callee属性，返回正被执行的-Function-对象，"><a href="#callee属性，返回正被执行的-Function-对象，" class="headerlink" title="callee属性，返回正被执行的 Function 对象，"></a>callee属性，返回正被执行的 Function 对象，</h6><p>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。</p>
+<p>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。</p>
+<p>示例:</p>
+<p>var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));</p>
+
       
     </div>
 
@@ -435,6 +452,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/26/jsNullAndUndefined/" rel="prev" title="js高级编程">
+                js高级编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -481,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -497,7 +527,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -544,6 +574,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">1.</span> <span class="nav-text">arguments</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#arguments他的特性和使用方法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">arguments他的特性和使用方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#callee属性，返回正被执行的-Function-对象，"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">callee属性，返回正被执行的 Function 对象，</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
