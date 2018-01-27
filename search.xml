@@ -6,14 +6,22 @@
       <title><![CDATA[js中null和undefined区别]]></title>
       <url>/2018/01/26/jsNullAndUndefined/</url>
       <content type="html"><![CDATA[<h4 id="js中-null-和-undefined-的区别"><a href="#js中-null-和-undefined-的区别" class="headerlink" title="js中 null 和 undefined 的区别"></a>js中 null 和 undefined 的区别</h4><p>Undefined类型只有一个值，即undefined。当声明的变量(已被声明)还未被初始化时，变量的默认值为undefined。<br>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。<br> js 代码</p>
-<h6 id="var-oValue"><a href="#var-oValue" class="headerlink" title="var oValue;"></a>var oValue;</h6><h6 id="alert-oValue-undefined-output-“true”"><a href="#alert-oValue-undefined-output-“true”" class="headerlink" title="alert(oValue == undefined); //output “true”"></a>alert(oValue == undefined); //output “true”</h6><p>这段代码显示为true,代表oVlaue的值即为undefined，因为我们没有初始化它。<br><a id="more"></a><br>示例代码</p>
-<h6 id="alert-null-document-getElementById-‘notExistElement’"><a href="#alert-null-document-getElementById-‘notExistElement’" class="headerlink" title="alert(null == document.getElementById(‘notExistElement’));"></a>alert(null == document.getElementById(‘notExistElement’));</h6><p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p>
+<font color="#FF7F50">var oValue;<br>alert(oValue == undefined); //output “true”<br></font>
+
+<p>这段代码显示为true,代表oVlaue的值即为undefined，因为我们没有初始化它。<br><a id="more"></a><br>示例代码</p>
+<font color="#FF7F50">alert(null == document.getElementById(‘notExistElement’));</font>
+
+<p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p>
 <p>示例代码</p>
-<h6 id="alert-typeof-undefined-output-“undefined”"><a href="#alert-typeof-undefined-output-“undefined”" class="headerlink" title="alert(typeof undefined); //output “undefined”"></a>alert(typeof undefined); //output “undefined”</h6><h6 id="alert-typeof-null-output-“object”"><a href="#alert-typeof-null-output-“object”" class="headerlink" title="alert(typeof null); //output “object”"></a>alert(typeof null); //output “object”</h6><p>第一行代码很容易理解，undefined的类型为Undefined；第二行代码却让人疑惑，为什么null的类型又是Object了呢？其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p>
+<font color="#FF7F50">alert(typeof undefined); //output “undefined”</font><br><font color="#FF7F50">alert(typeof null); //output “object”</font>  
+
+<p>第一行代码很容易理解，undefined的类型为Undefined；第二行代码却让人疑惑，为什么null的类型又是Object了呢？其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p>
+<p>示例代码<br> <font color="#FF7F50">alert(null == undefined); //output “true”</font>  </p>
+<p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为相等的。但是，如果在一些情况下，我们一定要区分这两个值，那应该怎么办呢？可以使用下面的两种方法。</p>
 <p>示例代码</p>
-<h6 id="alert-null-undefined-output-“true”"><a href="#alert-null-undefined-output-“true”" class="headerlink" title="alert(null == undefined); //output “true”"></a>alert(null == undefined); //output “true”</h6><p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为相等的。但是，如果在一些情况下，我们一定要区分这两个值，那应该怎么办呢？可以使用下面的两种方法。</p>
-<p>示例代码</p>
-<h6 id="alert-null-undefined-output-“false”"><a href="#alert-null-undefined-output-“false”" class="headerlink" title="alert(null === undefined); //output “false”"></a>alert(null === undefined); //output “false”</h6><h6 id="alert-typeof-null-typeof-undefined-output-“false”"><a href="#alert-typeof-null-typeof-undefined-output-“false”" class="headerlink" title="alert(typeof null == typeof undefined); //output “false”"></a>alert(typeof null == typeof undefined); //output “false”</h6><p>使用typeof方法在前面已经讲过，null与undefined的类型是不一样的，所以输出”false”。而===代表绝对等于，在这里null === undefined输出false。</p>
+<font color="#FF7F50">alert(null === undefined); //output “false”</font><br><font color="#FF7F50">alert(typeof null == typeof undefined); //output “false”</font>  
+
+<p>使用typeof方法在前面已经讲过，null与undefined的类型是不一样的，所以输出”false”。而===代表绝对等于，在这里null === undefined输出false。</p>
 ]]></content>
       
         <categories>
