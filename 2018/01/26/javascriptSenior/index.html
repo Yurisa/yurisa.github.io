@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/26/javascriptSenior/index.html">
 <meta property="og:site_name" content="Yellow2dong">
 <meta property="og:description" content="argumentsjavascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.call">
-<meta property="og:updated_time" content="2018-01-27T05:29:52.482Z">
+<meta property="og:updated_time" content="2018-01-27T05:31:21.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js高级编程">
 <meta name="twitter:description" content="argumentsjavascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.call">
@@ -387,14 +387,14 @@
 
       
         <h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>javascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.callee)。<br><a id="more"></a></p>
-<h6 id="arguments他的特性和使用方法"><a href="#arguments他的特性和使用方法" class="headerlink" title="arguments他的特性和使用方法"></a>arguments他的特性和使用方法</h6><p>特性：</p>
+<h4 id="arguments他的特性和使用方法"><a href="#arguments他的特性和使用方法" class="headerlink" title="arguments他的特性和使用方法"></a>arguments他的特性和使用方法</h4><p>特性：</p>
 <p>arguments对象和Function是分不开的。因为arguments这个对象不能显式创建，arguments对象只有函数开始时才可用。</p>
 <p>使用方法：</p>
 <p>虽然arguments对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同</p>
 <p>例如：</p>
 <p>arguments[0],arguments[1],。。。。。。。。arguments[n],</p>
 <p>示例:</p>
-<font color="#FF7F50">function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)<br><br>输出结果：<br><br>name,age<br></font><br>###### callee属性，返回正被执行的 Function 对象<br>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。<br><br>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。<br><br>示例:<br><br><font color="#FF7F50">var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));<br></font>
+<font color="#FF7F50">function test() {<br>        var s = “”;<br>        for (var i = 0; i &lt; arguments.length; i++) {<br>            alert(arguments[i]);<br>            s += arguments[i] + “,”;<br>        }<br>        return s;<br>    }<br>    test(“name”, “age”)<br><br>输出结果：<br><br>name,age<br></font><br>#### callee属性，返回正被执行的 Function 对象<br>也就是所指定的 Function 对象的正文。callee 属性是 arguments 对象的一个成员，仅当相关函数正在执行时才可用。<br><br>callee 属性的初始值就是正被执行的 Function 对象，这允许匿名的递归函数。<br><br>示例:<br><br><font color="#FF7F50">var sum = function (n) {<br>        if (1 == n) {<br>            return 1;<br>        } else {<br>            return n + arguments.callee(n - 1);<br>        }<br>    }<br>    alert(sum(6));<br></font>
 
       
     </div>
@@ -579,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">1.</span> <span class="nav-text">arguments</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#arguments他的特性和使用方法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">arguments他的特性和使用方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">1.</span> <span class="nav-text">arguments</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#arguments他的特性和使用方法"><span class="nav-number">1.1.</span> <span class="nav-text">arguments他的特性和使用方法</span></a></li></ol></li></ol></div>
             
 
           </div>
