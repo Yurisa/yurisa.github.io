@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[解决最近webpack项目中缺少dev-server.js文件无法使用mock数据的问题]]></title>
+      <url>/2018/01/31/newWebpackProject/</url>
+      <content type="html"><![CDATA[<h3 id="解决最近webpack项目中缺少dev-server-js文件无法使用mock数据的问题"><a href="#解决最近webpack项目中缺少dev-server-js文件无法使用mock数据的问题" class="headerlink" title="解决最近webpack项目中缺少dev-server.js文件无法使用mock数据的问题"></a>解决最近webpack项目中缺少dev-server.js文件无法使用mock数据的问题</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>最近想温习一下vue+webpack,然后当想使用mock数据来模拟后台的时候,发现没有了之前项目中的dev-server.js和dev-client.js文件。</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>在webpack.dev.conf.js中进行如下操作<br><strong> 适当位置添加 </strong><br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express()</div><div class="line"></div><div class="line">var goodsData = require(&apos;../mock/goods.json&apos;)</div><div class="line">var router = express.Router()</div><div class="line">app.use(&apos;/goods&apos;, router)</div></pre></td></tr></table></figure></p>
+<p>注意:前提要添加了express依赖</p>
+<p>然后找到devServer在它的配置项中添加如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">before(app) &#123;</div><div class="line">    app.get(&apos;/goods&apos;, (req, res) =&gt; &#123;</div><div class="line">    res.json(goodsData)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>添加代码格式即如上所示</p>
+<h4 id="最后记得npm-run-dev"><a href="#最后记得npm-run-dev" class="headerlink" title="最后记得npm run dev"></a>最后记得npm run dev</h4><p>我之前只是start发现没什么用,需要run dev</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js中的this]]></title>
       <url>/2018/01/28/javascriptThis/</url>
       <content type="html"><![CDATA[<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>定义: <strong> this是在执行上下文创建时确定的一个在执行过程中不可更改的变量。 </strong></p>
