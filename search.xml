@@ -133,6 +133,31 @@
     </entry>
     
     <entry>
+      <title><![CDATA[MongoDB好像有点坑]]></title>
+      <url>/2018/01/26/mongodb/</url>
+      <content type="html"><![CDATA[<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p><strong> 定义: </strong> MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。<br><a id="more"></a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先是安装<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">MongoDB</a>,点击下载自己操作系统所对应的版本。这里我使用的是windows 64位版本(先在windows上试试水)。需要说的是国内的下载速度极其缓慢,建议翻墙下载。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>在傻瓜式安装之后需要对MongoDB进行配置。这里我把MongoDB安装在了E盘，然后我在E盘创建了一个名叫MongoDB_repo的文件夹<br><img src="/images/mongodbImage/1.png" alt="pic1 icon"><br>首先说说我遇到的坑，当我们完成这些创建步骤之后,至MongoDB的bin文件夹下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath E:\MongoDB_repo\data\db</div></pre></td></tr></table></figure></p>
+<p>发现运行成功。浏览器输入localhost:27017发下无法访问。(据说是因为版本原因)<br>但是启动的确是启动了。<br>此时我以为默认路径被修改为我设置的路径(MongoDB在Windows下默认的数据库路径为C:\data\db)。但当我第二次直接用<strong> mongod </strong>命令启动时却发现提示错误找不到路径C:\data\db。<br>于是采用第二种方法,配置windows服务的方式,并且配置环境变量使得在任何目录下都可以启动MongoDB。<br><strong> 以下是正确做法: </strong><br><img src="/images/mongodbImage/2.png" alt="pic2 icon"><br>只需要在windows本地服务中心启动即可<br><img src="/images/mongodbImage/4.jpg" alt="pic4 icon"><br>配置环境变量这里我就不再赘述。</p>
+<p>然后启动成功进入MongoDB命令界面输入以下<br><img src="/images/mongodbImage/3.png" alt="pic3 icon"><br>以上即为成功</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Nosql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js中的arguments]]></title>
       <url>/2018/01/26/javascriptArguments/</url>
       <content type="html"><![CDATA[<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>javascript并没有函数重载功能,但Arguments对象能够模拟重载。每个函数都会有一个Arguments对象实例arguments,它引用着函数的实参,可以用数组下标”[]”引用arguments的元素。arguments.length为函数实参个数,arguments.callee引用函数自身。(在匿名函数中如果要递归调用函数自身,可以使用arguments.callee)。<br><a id="more"></a></p>
